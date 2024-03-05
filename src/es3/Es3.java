@@ -8,13 +8,23 @@ public class Es3 {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Write a phrase");
-
+        System.out.println("Write a word");
+        String word = scanner.nextLine();
+        System.out.println("Phrase with commas: " + commasAdder(word));
 
         scanner.close();
         ;}
 
-    public static String commasAdder(String phrase){
-        
+    public static String commasAdder(String word) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < word.length(); i++) {
+            char currentChar = word.charAt(i);
+            result.append(currentChar);
+            result.append(",");
+            if (word.substring(i).startsWith(":q")) break;
+        }
+
+        return result.toString();
     }
 }
