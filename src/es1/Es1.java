@@ -10,7 +10,7 @@ public class Es1 {
 
         System.out.println("Write a word");
         String x = scanner.nextLine();
-        System.out.println("Is it an a word composed with even number? "
+        System.out.println("Is it a word composed with even number? "
                 + stringEvenOdd(x));
 
         System.out.println("Write a year");
