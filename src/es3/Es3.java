@@ -16,14 +16,28 @@ public class Es3 {
         ;}
 
     public static String commasAdder(String word) {
-        StringBuilder result = new StringBuilder();
 
-        for (int i = 0; i < word.length(); i++) {
+
+        StringBuilder result = new StringBuilder();
+        int i = 0;
+
+        while (i < word.length()) {
             char currentChar = word.charAt(i);
             result.append(currentChar);
             result.append(",");
-            if (word.substring(i).startsWith(":q")) break;
+
+            if (word.startsWith(":q", i))
+                break;
+
+            i++;
         }
+
+//        for (int i = 0; i < word.length(); i++) {
+//            char currentChar = word.charAt(i);
+//            result.append(currentChar);
+//            result.append(",");
+//            if (word.substring(i).startsWith(":q")) break;
+//        }
 
         return result.toString();
     }
